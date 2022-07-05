@@ -1,0 +1,17 @@
+#list1 .form-control {
+    border-color: transparent;
+    /* box-shadow: 5px 10px; */
+    /* box-shadow: 5px 10px #c4e338; */
+    /* border-style: dotted;
+    border-color: rgb(219, 112, 134); */
+}
+
+#list1 .form-control:focus {
+    border-color: transparent;
+    box-shadow: none;
+    /* box-shadow: 5px 10px #c4e338; */
+}
+
+#list1 .select-input.form-control[readonly]:not([disabled]) {
+    background-color: #fbfbfb;
+}
