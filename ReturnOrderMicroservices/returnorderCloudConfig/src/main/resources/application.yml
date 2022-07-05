@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ashwanikumarshaw/ROM-Config-Server
+          uri: https://github.com/PrashantTariyal/Spring-cloud-config
           clone-on-start: true
           skipSslValidation: true
 eureka:
