@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fse</groupId>
-	<artifactId>Return-Order-Management-System</artifactId>
+	<artifactId>returnorderComponentProcessingMicroservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ReturnOrderManagementSystem-ComponentProcessing</name>
 	<description>Controller Processing Microservice</description>
