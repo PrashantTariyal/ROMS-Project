@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fse</groupId>
-	<artifactId>ReturnOrderManagementSystem</artifactId>
+	<artifactId>returnorderApiGateway</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ReturnOrderManagementSystem-APIGetWay</name>
 	<description>Api Gateway for ROMS</description>
