@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fse</groupId>
-	<artifactId>returnorderEurekaDiscovery</artifactId>
+	<artifactId>eurekadiscovery</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ReturnOrderManagementSystem-EurekaServer</name>
 	<description>Eureka Discovery Client</description>
