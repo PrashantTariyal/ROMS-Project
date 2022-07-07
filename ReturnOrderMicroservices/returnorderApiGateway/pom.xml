@@ -90,6 +90,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>api-gateway-service-executable</finalName>
 	</build>
 
 </project>
