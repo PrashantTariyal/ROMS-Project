@@ -1,0 +1,65 @@
+version: '2'
+services:
+    discovery-service:
+        image: prashantdoc99/prashantdoc99-roms-repository:eurekadiscovery
+        ports:
+            -   8990:8761
+
+    config-service:
+        image: prashantdoc99/prashantdoc99-roms-repository:returnordercloudconfig
+        ports:
+            -   8992:9999
+        depends_on:
+            -   discovery-service
+        environment:
+            eureka.client.enabled: 'true'
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
+
+    gateway-service:
+        image: prashantdoc99/prashantdoc99-roms-repository:api-gateway-service-executable
+        ports:
+            -   8991:9191
+        depends_on:
+            -   discovery-service
+            -   config-service
+        environment:
+            eureka.client.enabled: 'true'
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
+
+    auth-service:
+        image: prashantdoc99/prashantdoc99-roms-repository:returnorderauthorization-service
+        ports:
+            -   8996:9094
+        depends_on:
+            -   discovery-service
+            -   config-service
+            -   gateway-service
+        environment:
+            eureka.client.enabled: 'true'
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
+
+    component-process-service:
+        image: prashantdoc99/prashantdoc99-roms-repository:returnordercomponentprocessing-service
+        ports:
+            -   8998:9090
+        depends_on:
+            -   discovery-service
+            -   config-service
+            -   gateway-service
+            -   auth-service
+        environment:
+            eureka.client.enabled: 'true'
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
+
+    package-delivery-service:
+        image: prashantdoc99/prashantdoc99-roms-repository:returnorderpackaginganddelivery-service
+        ports:
+            -   9000:9092
+        depends_on:
+            -   discovery-service
+            -   config-service
+            -   gateway-service
+            -   auth-service
+        environment:
+            eureka.client.enabled: 'true'
+            eureka.client.serviceUrl.defaultZone: http://discovery-service:8761/eureka
