@@ -3,12 +3,12 @@ services:
     discovery-service:
         image: prashantdoc99/prashantdoc99-roms-repository:eurekadiscovery
         ports:
-            -   8990:8761
+            -   8761:8761
 
     config-service:
         image: prashantdoc99/prashantdoc99-roms-repository:returnordercloudconfig
         ports:
-            -   8992:9999
+            -   9999:9999
         depends_on:
             -   discovery-service
         environment:
@@ -18,7 +18,7 @@ services:
     gateway-service:
         image: prashantdoc99/prashantdoc99-roms-repository:api-gateway-service-executable
         ports:
-            -   8991:9191
+            -   9191:9191
         depends_on:
             -   discovery-service
             -   config-service
@@ -29,7 +29,7 @@ services:
     auth-service:
         image: prashantdoc99/prashantdoc99-roms-repository:returnorderauthorization-service
         ports:
-            -   8996:9094
+            -   9094:9094
         depends_on:
             -   discovery-service
             -   config-service
@@ -41,7 +41,7 @@ services:
     component-process-service:
         image: prashantdoc99/prashantdoc99-roms-repository:returnordercomponentprocessing-service
         ports:
-            -   8998:9090
+            -   9090:9090
         depends_on:
             -   discovery-service
             -   config-service
@@ -54,7 +54,7 @@ services:
     package-delivery-service:
         image: prashantdoc99/prashantdoc99-roms-repository:returnorderpackaginganddelivery-service
         ports:
-            -   9000:9092
+            -   9092:9092
         depends_on:
             -   discovery-service
             -   config-service
